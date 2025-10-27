@@ -398,7 +398,7 @@ function App() {
                 {/* Image container */}
                 <div className="relative w-full h-full rounded-2xl overflow-hidden">
                   <img 
-                    src="/Portfolio/portfolio-site/Profile_Photo.PNG" 
+                    src="/Profile_Photo.PNG" 
                     alt="Akshita Mishra" 
                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
                   />
