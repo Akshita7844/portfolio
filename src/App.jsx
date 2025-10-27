@@ -419,7 +419,7 @@ function App() {
             </p>
             <div className="flex gap-4 justify-center flex-wrap mb-12">
               <a
-                href="mailto:akshita7844@gmail.com"
+                href="mailto:akshitamishra027@gmail.com"
                 className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-teal-600 rounded-full hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 font-semibold transform hover:scale-105"
               >
                 Get in Touch
@@ -468,7 +468,7 @@ function App() {
                 </svg>
               </a>
               <a 
-                href="mailto:akshita7844@gmail.com" 
+                href="mailto:akshitamishra027@gmail.com" 
                 className="w-12 h-12 rounded-full glass-effect border border-cyan-500/20 flex items-center justify-center text-2xl hover:border-cyan-500/40 hover:scale-110 transition-all duration-300"
                 aria-label="Email"
               >
@@ -963,7 +963,7 @@ function App() {
               </svg>
             </a>
             <a
-              href="mailto:akshita7844@gmail.com"
+              href="mailto:akshitamishra027@gmail.com"
               className="w-12 h-12 rounded-full glass-effect border border-cyan-500/20 flex items-center justify-center hover:border-cyan-500/40 hover:scale-110 transition-all duration-300"
               title="Email"
               aria-label="Email"
