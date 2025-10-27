@@ -22,17 +22,12 @@ jobs:
         with:
           node-version: '20'
           cache: 'npm'
-          cache-dependency-path: './portfolio-site/package-lock.json'
       
       - name: Install dependencies
-        run: |
-          cd portfolio-site
-          npm ci
+        run: npm ci
       
       - name: Build
-        run: |
-          cd portfolio-site
-          npm run build
+        run: npm run build
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -40,7 +35,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './portfolio-site/dist'
+          path: './dist'
       
       - name: Deploy to GitHub Pages
         id: deployment
