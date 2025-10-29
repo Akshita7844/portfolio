@@ -102,6 +102,18 @@ Edit `src/App.jsx` to customize:
 - Skills and expertise
 - Contact information and social links
 
+### No‑Code Paste Points (Markers)
+
+If you used `portfolio-generator.html`, paste the generated snippets exactly between these markers in `src/App.jsx`:
+
+- Data arrays:
+  - From `{/* ======= BEGIN_DATA_BLOCK (experiences, projects, skills) ======= */}`
+  - To `{/* ======= END_DATA_BLOCK ======= */}`
+
+- Hero section (name, title, bio, email CTA):
+  - From `{/* ======= BEGIN_HERO_BLOCK (name, title, bio, email) ======= */}`
+  - To `{/* ======= END_HERO_BLOCK ======= */}`
+
 ### Change Colors
 
 Edit `tailwind.config.js` to customize the color scheme:

@@ -34,3 +34,26 @@ Repo: `https://github.com/Akshita7844/portfolio`
 ## Contributing / Edits
 
 Main branch is protected. Please open a PR if suggesting changes. You can freely create your own copy via the template link above.
+
+## 🎯 Option 0: No‑Code Generator (Easiest)
+
+1) Open `portfolio-generator.html` in your browser (it's in the root of this repo). If viewing on GitHub, click View Raw and save, then open the file locally.
+
+2) Fill the form and click "Generate My Portfolio Code". You will get two snippets:
+- Data block: wrapped between `{/* ======= BEGIN_DATA_BLOCK ... ======= */}` and `{/* ======= END_DATA_BLOCK ======= */}`
+- Hero block: wrapped between `{/* ======= BEGIN_HERO_BLOCK ... ======= */}` and `{/* ======= END_HERO_BLOCK ======= */}`
+
+3) Paste into `portfolio-site/src/App.jsx` EXACTLY between markers:
+- Replace arrays inside the markers starting near the top of the file:
+  - Find: `{/* ======= BEGIN_DATA_BLOCK (experiences, projects, skills) ======= */}`
+  - Select everything until: `{/* ======= END_DATA_BLOCK ======= */}`
+  - Paste the generated Data Block there
+
+- Replace the hero section content:
+  - Find: `{/* ======= BEGIN_HERO_BLOCK (name, title, bio, email) ======= */}`
+  - Select until: `{/* ======= END_HERO_BLOCK ======= */}`
+  - Paste the generated Hero Block there
+
+4) Deploy to Vercel using the button above or import the repo. Root directory is `portfolio-site`, build `npm run build`, output `dist`.
+
+That’s it—no coding needed.

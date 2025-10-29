@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio Generator</title>
+    <style>
+      body { font-family: -apple-system, system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif; margin: 24px; color: #0f172a; }
+      .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+      .card { border: 1px solid #e2e8f0; border-radius: 12px; padding: 16px; }
+      .row { display: grid; grid-template-columns: 160px 1fr; gap: 12px; align-items: center; margin: 8px 0; }
+      input, textarea { width: 100%; padding: 10px 12px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 14px; }
+      textarea { min-height: 90px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+      h1 { font-size: 22px; margin: 0 0 12px; }
+      h2 { font-size: 16px; margin: 16px 0 8px; color: #334155; }
+      button { background: #06b6d4; color: white; border: 0; border-radius: 10px; padding: 10px 14px; cursor: pointer; font-weight: 600; }
+      .muted { color: #475569; font-size: 13px; }
+      pre { background: #0b1020; color: #e2e8f0; padding: 12px; border-radius: 10px; overflow: auto; }
+      .preview { background: #0b1020; color: #e2e8f0; border-radius: 12px; padding: 24px; }
+      .row > label { font-weight: 600; color: #334155; }
+      .stack { display: grid; gap: 8px; }
+      .actions { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+      .notice { background: #ecfeff; border: 1px solid #a5f3fc; color: #155e75; padding: 10px 12px; border-radius: 10px; }
+      .small { font-size: 12px; color: #475569; }
+      a.btn { background: #111827; color: #e5e7eb; text-decoration: none; padding: 10px 14px; border-radius: 10px; font-weight: 600; display: inline-block; }
+    </style>
+  </head>
+  <body>
+    <h1>Portfolio No‑Code Generator</h1>
+    <p class="muted">Fill the form, generate code, paste between markers in <code>portfolio-site/src/App.jsx</code>, then deploy to Vercel.</p>
+
+    <div class="grid">
+      <div class="card">
+        <h2>Hero</h2>
+        <div class="row"><label>Name</label><input id="name" placeholder="Your Name" /></div>
+        <div class="row"><label>Title</label><input id="title" placeholder="Your Title" /></div>
+        <div class="row"><label>Email</label><input id="email" placeholder="you@example.com" /></div>
+        <div class="row"><label>Bio</label><textarea id="bio" placeholder="Short intro"></textarea></div>
+        <h2>Social</h2>
+        <div class="row"><label>GitHub (username)</label><input id="github" placeholder="your-github" /></div>
+        <div class="row"><label>LinkedIn (full URL)</label><input id="linkedin" placeholder="https://www.linkedin.com/in/you" /></div>
+        <div class="row"><label>Twitter/X (@handle)</label><input id="twitter" placeholder="@you" /></div>
+        <h2>Content</h2>
+        <div class="row"><label>Experiences (JSON)</label><textarea id="experiences" placeholder='[ { "title": "Role", "company": "Org", "period": "2024", "location": "Remote", "achievements": ["Impact"], "technologies": ["React"] } ]'></textarea></div>
+        <div class="row"><label>Projects (JSON)</label><textarea id="projects" placeholder='[ { "name": "Project", "description": "What it does", "technologies": ["JS"], "link": null, "isCompanyProject": false, "gradient": "from-cyan-500 to-teal-600", "impact": "Value" } ]'></textarea></div>
+        <div class="row"><label>Skills (JSON)</label><textarea id="skills" placeholder='[ { "name": "Python", "color": "from-blue-500 to-blue-600", "category": "Programming" } ]'></textarea></div>
+        <div class="actions">
+          <button id="generate">Generate My Portfolio Code</button>
+          <a class="btn" id="vercel" target="_blank" rel="noopener">Open Vercel Deploy</a>
+          <span class="small">Root directory: <code>portfolio-site</code>, build: <code>npm run build</code>, output: <code>dist</code></span>
+        </div>
+        <p class="notice">Paste the Data Block between the Data markers, and the Hero Block between the Hero markers in <code>App.jsx</code>.</p>
+      </div>
+
+      <div class="stack">
+        <div class="card">
+          <h2>Generated Code</h2>
+          <pre id="output">// Fill the form and click "Generate My Portfolio Code"</pre>
+        </div>
+        <div class="card">
+          <h2>Hero Preview (approximate)</h2>
+          <div class="preview" id="preview">
+            <div style="text-align:center">
+              <h3 style="font-size:28px;margin:8px 0">Hi, I'm <span id="pname">Your Name</span></h3>
+              <div id="ptitle" style="opacity:.85;margin:4px 0">Your Title</div>
+              <div id="pbio" style="opacity:.7;margin:8px 0 16px">Short intro</div>
+              <a id="pcta" href="#" style="background:#0891b2;color:white;padding:8px 12px;border-radius:999px;text-decoration:none">View My Work</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const vercelUrl = 'https://vercel.com/new/clone?repository-url=' +
+        encodeURIComponent('https://github.com/Akshita7844/portfolio') +
+        '&project-name=portfolio-site&repository-name=portfolio' +
+        '&root-directory=portfolio-site&build-command=' + encodeURIComponent('npm run build') +
+        '&output-directory=dist';
+      document.getElementById('vercel').href = vercelUrl;
+
+      const byId = (id) => document.getElementById(id);
+
+      function safeParse(json, fallback) {
+        try { return JSON.parse(json); } catch { return fallback; }
+      }
+
+      function toArrayCode(list) {
+        return list.map((item) => JSON.stringify(item, null, 2)).join(',\n');
+      }
+
+      function generate() {
+        const data = {
+          name: byId('name').value.trim(),
+          title: byId('title').value.trim(),
+          email: byId('email').value.trim(),
+          bio: byId('bio').value.trim(),
+          github: byId('github').value.trim(),
+          linkedin: byId('linkedin').value.trim(),
+          twitter: byId('twitter').value.trim(),
+          experiences: safeParse(byId('experiences').value, []),
+          projects: safeParse(byId('projects').value, []),
+          skills: safeParse(byId('skills').value, []),
+        };
+
+        // Update small preview
+        byId('pname').textContent = data.name || 'Your Name';
+        byId('ptitle').textContent = data.title || 'Your Title';
+        byId('pbio').textContent = data.bio || 'Short intro';
+        byId('pcta').href = data.email ? 'mailto:' + data.email : '#';
+
+        const expCode = toArrayCode(data.experiences);
+        const projCode = toArrayCode(data.projects);
+        const skillsList = toArrayCode(data.skills);
+
+        const dataBlock = `{/* ======= BEGIN_DATA_BLOCK (experiences, projects, skills) ======= */}
+const experiences = [
+${expCode}
+]
+
+const projects = [
+${projCode}
+]
+
+const skills = [
+${skillsList}
+]
+{/* ======= END_DATA_BLOCK ======= */}`;
+
+        const heroBlock = `{/* ======= BEGIN_HERO_BLOCK (name, title, bio, email) ======= */}
+<h1 className="text-6xl md:text-8xl font-bold mb-8 leading-tight">
+  <span className="gradient-text">Hi, I'm</span>
+  <br />
+  <span className="text-white">${data.name || 'Your Name'}</span>
+</h1>
+<p className="text-2xl md:text-3xl mb-6 text-gray-300">
+  <span className="gradient-text">${data.title || 'Your Title'}</span>
+</p>
+<p className="text-xl text-gray-400 mb-10 max-w-3xl mx-auto leading-relaxed">
+  ${data.bio || 'Short intro'}
+</p>
+<div className="flex gap-4 justify-center flex-wrap mb-12">
+  <a
+    href="${data.email ? `mailto:${data.email}` : '#'}"
+    className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-teal-600 rounded-full hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 font-semibold transform hover:scale-105"
+  >
+    View My Work
+  </a>
+</div>
+{/* ======= END_HERO_BLOCK ======= */}`;
+
+        const socialHints = `// Footer section: Update social links in App.jsx if needed:
+${data.github ? `// GitHub -> href="https://github.com/${data.github}"` : '// Add GitHub username'}
+${data.linkedin ? `// LinkedIn -> href="${data.linkedin}"` : '// Add LinkedIn URL'}
+${data.twitter ? `// Twitter/X -> href="https://twitter.com/${data.twitter.replace('@','')}"` : '// Add Twitter handle'}
+`;
+
+        const code = `// ============================================
+// COPY THIS CODE TO: portfolio-site/src/App.jsx
+// Paste EXACTLY between the markers shown below
+// ============================================
+
+${dataBlock}
+
+// ============================================
+// Also replace the Hero section content between its markers:
+// {/* ======= BEGIN_HERO_BLOCK (name, title, bio, email) ======= */}
+// ... paste hero block here ...
+// {"/* ======= END_HERO_BLOCK ======= */"}
+// ============================================
+
+${heroBlock}
+
+${socialHints}`;
+
+        byId('output').textContent = code;
+      }
+
+      byId('generate').addEventListener('click', generate);
+    </script>
+  </body>
+  </html>
+
+
