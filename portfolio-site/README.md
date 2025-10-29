@@ -1,5 +1,9 @@
 # AI/ML Product Engineer Portfolio
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FAkshita7844%2Fportfolio&project-name=portfolio-site&repository-name=portfolio&root-directory=portfolio-site&build-command=npm%20run%20build&output-directory=dist)
+
+> Click “Use this template” on GitHub to create your copy, or deploy with one click above.
+
 A beautiful, modern portfolio website built with React, Vite, and Tailwind CSS.
 
 ## Features
@@ -79,6 +83,12 @@ Option A: Use as template (fastest)
 - Click “Use this template” on GitHub → Create your repo
 - Update content in `src/App.jsx` (see below)
 - Deploy to Vercel following the steps above
+
+Quick template link:
+
+```md
+[Use this template](https://github.com/Akshita7844/portfolio/generate)
+```
 
 Option B: Fork
 - Fork this repository and rename it
