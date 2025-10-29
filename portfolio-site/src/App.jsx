@@ -57,7 +57,7 @@ function App() {
       achievements: [
         "Spearheaded AI copilots and digital preflight systems, reducing pilot workload by ~50% per flight",
         "Delivered AI-powered Flight Planner (Python, FastAPI, LangChain, Hugging Face) integrating ICAO codes, NOTAMs, METAR/TAF, Tomorrow.io weather",
-        "Built AIRMAN Maverick - Copilot combining LLMs with RAG pipelines (LangChain, ChromaDB), enabling natural-language queries of SOPs with 95%+ reliability",
+        "Built AIRMAN Maverick — Intelligent Flight Planner & Logger; also built a GenAI copilot for student pilots combining LLMs with RAG pipelines (LangChain, ChromaDB) enabling natural-language queries of SOPs with 95%+ reliability",
         "Engineered safety-critical modules (Weight & Balance, Fuel Planning, Altitude Optimization, Navigation Logs) cutting preflight prep from 30 mins to <5 mins",
         "Embedded Responsible AI safeguards (SHAP explainability, AIF360 fairness checks, hallucination detection), reducing unsafe responses by 30%",
         "Authored audit-ready documentation, evaluation protocols, and CI/CD workflows (Docker, GitHub Actions, ONNX) for regulatory alignment",
@@ -86,8 +86,8 @@ function App() {
 
   const projects = [
     {
-      name: "AIRMAN - Intelligent Flight Planner System",
-      description: "Production-ready digital flight planner automating fuel calculation, weight & balance, altitude optimization, and navigation logs under FAA/ICAO standards. Integrated real-time aviation data (METAR/TAF weather, NOTAMs, ICAO codes), reducing preflight preparation from 30 minutes to under 5 minutes. Delivered auditable, modular backend and pilot-facing interface, replacing manual workflows with safe, transparent automation.",
+      name: "AIRMAN Maverick - Intelligent Flight Planner & Logger",
+      description: "Production-ready digital flight planner and logger automating fuel calculation, weight & balance, altitude optimization, and navigation logs under FAA/ICAO standards. Integrated real-time aviation data (METAR/TAF weather, NOTAMs, ICAO codes), reducing preflight preparation from 30 minutes to under 5 minutes. Delivered auditable, modular backend and pilot-facing interface, replacing manual workflows with safe, transparent automation.",
       technologies: ["Python", "FastAPI", "React", "Tomorrow.io", "ICAO", "NOTAM APIs", "Aviation Data"],
       link: null,
       isCompanyProject: true,
@@ -95,8 +95,8 @@ function App() {
       impact: "Aviation Safety Automation"
     },
     {
-      name: "AIRMAN Maverick - Aviation AI Copilot",
-      description: "Developed a GenAI copilot enabling natural-language queries of SOPs, checklists, and manuals during training and preflight. Combined RAG pipelines, multimodal AI (image captioning with BLIP-2, OCR, voice-to-text with Whisper), and prompt safety layers, achieving 95%+ reliability in domain testing. Enhanced pilot decision support and compliance by embedding real-time context checks and safety prompts.",
+      name: "AIRMAN GenAI Copilot for Student Pilots",
+      description: "Developed a GenAI learning copilot for student pilots, enabling natural-language queries of SOPs, checklists, and training manuals during ground school and preflight. Combined RAG pipelines, multimodal AI (image captioning with BLIP-2, OCR, voice-to-text with Whisper), and prompt safety layers, achieving 95%+ reliability in domain testing. Enhanced learning outcomes and decision support by embedding real-time context checks and safety prompts.",
       technologies: ["LangChain", "ChromaDB", "Hugging Face", "BLIP-2", "Whisper", "OCR", "RAG"],
       link: null,
       isCompanyProject: true,
@@ -398,7 +398,7 @@ function App() {
                 {/* Image container */}
                 <div className="relative w-full h-full rounded-2xl overflow-hidden">
                   <img 
-                    src="/Portfolio/portfolio-site/Profile_Photo.PNG" 
+                    src="/Profile_Photo.PNG" 
                     alt="Akshita Mishra" 
                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
                   />
@@ -419,7 +419,7 @@ function App() {
             </p>
             <div className="flex gap-4 justify-center flex-wrap mb-12">
               <a
-                href="mailto:akshita7844@gmail.com"
+                href="mailto:akshitamishra027@gmail.com"
                 className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-teal-600 rounded-full hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 font-semibold transform hover:scale-105"
               >
                 Get in Touch
@@ -468,7 +468,7 @@ function App() {
                 </svg>
               </a>
               <a 
-                href="mailto:akshita7844@gmail.com" 
+                href="mailto:akshitamishra027@gmail.com" 
                 className="w-12 h-12 rounded-full glass-effect border border-cyan-500/20 flex items-center justify-center text-2xl hover:border-cyan-500/40 hover:scale-110 transition-all duration-300"
                 aria-label="Email"
               >
@@ -963,7 +963,7 @@ function App() {
               </svg>
             </a>
             <a
-              href="mailto:akshita7844@gmail.com"
+              href="mailto:akshitamishra027@gmail.com"
               className="w-12 h-12 rounded-full glass-effect border border-cyan-500/20 flex items-center justify-center hover:border-cyan-500/40 hover:scale-110 transition-all duration-300"
               title="Email"
               aria-label="Email"

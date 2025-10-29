@@ -39,7 +39,20 @@ npm run build
 
 The build output will be in the `dist` folder.
 
-## Deployment to GitHub Pages
+## Deploy (Vercel Recommended)
+
+### Vercel (1-click, auto-previews)
+
+1) Import the repo in Vercel
+- Framework Preset: Vite
+- Root Directory: `portfolio-site`
+- Build Command: `npm run build`
+- Output Directory: `dist`
+
+2) On push to `main`, Production updates automatically.
+3) Every PR gets a Preview URL posted by Vercel.
+
+### GitHub Pages (Alternative)
 
 ### Option 1: Automatic Deployment (Recommended)
 
@@ -57,6 +70,29 @@ npm run build
 # Deploy using gh-pages (install if needed: npm install -g gh-pages)
 npx gh-pages -d dist
 ```
+
+## Use This as a Template
+
+You can reproduce this portfolio for yourself:
+
+Option A: Use as template (fastest)
+- Click “Use this template” on GitHub → Create your repo
+- Update content in `src/App.jsx` (see below)
+- Deploy to Vercel following the steps above
+
+Option B: Fork
+- Fork this repository and rename it
+- Update your details and deploy
+
+Option C: Degit (no git history)
+```bash
+npx degit Akshita7844/portfolio portfolio-yourname
+cd portfolio-yourname/portfolio-site
+npm install
+npm run dev
+```
+
+If you want this repo to be a true GitHub “Template repository”, toggle it in GitHub → Settings → General → Template repository.
 
 ## Customization
 
@@ -87,6 +123,16 @@ You can add new sections by:
 1. Creating new sections in `App.jsx`
 2. Adding navigation links in the navbar
 3. Following the existing pattern for glass-effect styling
+
+## Share Your Live Portfolio
+
+- Live URL: `https://akshita-mishra.vercel.app`
+- Add a badge in your repo README:
+
+```md
+[![Vercel](https://img.shields.io/badge/Deploy-Vercel-black?logo=vercel)](https://vercel.com/new)
+[![Made with React](https://img.shields.io/badge/Made%20with-React-61DAFB?logo=react&logoColor=white)](#)
+```
 
 ## Tech Stack
 
