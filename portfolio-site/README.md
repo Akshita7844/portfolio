@@ -2,7 +2,10 @@
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FAkshita7844%2Fportfolio&project-name=portfolio-site&repository-name=portfolio&root-directory=portfolio-site&build-command=npm%20run%20build&output-directory=dist)
 
-> Click “Use this template” on GitHub to create your copy, or deploy with one click above.
+Use it your way:
+- Template (recommended): https://github.com/Akshita7844/portfolio/generate
+- Clone: `git clone https://github.com/Akshita7844/portfolio`
+- Run: `cd portfolio/portfolio-site && npm install && npm run dev`
 
 A beautiful, modern portfolio website built with React, Vite, and Tailwind CSS.
 
@@ -77,32 +80,16 @@ npx gh-pages -d dist
 
 ## Use This as a Template
 
-You can reproduce this portfolio for yourself:
-
-Option A: Use as template (fastest)
-- Click “Use this template” on GitHub → Create your repo
-- Update content in `src/App.jsx` (see below)
-- Deploy to Vercel following the steps above
-
-Quick template link:
-
-```md
-[Use this template](https://github.com/Akshita7844/portfolio/generate)
-```
-
-Option B: Fork
-- Fork this repository and rename it
-- Update your details and deploy
-
-Option C: Degit (no git history)
-```bash
-npx degit Akshita7844/portfolio portfolio-yourname
-cd portfolio-yourname/portfolio-site
-npm install
-npm run dev
-```
-
-If you want this repo to be a true GitHub “Template repository”, toggle it in GitHub → Settings → General → Template repository.
+Pick one:
+- Use template (fastest): https://github.com/Akshita7844/portfolio/generate
+- Fork: fork → edit → deploy
+- Degit (no history):
+  ```bash
+  npx degit Akshita7844/portfolio portfolio-yourname
+  cd portfolio-yourname/portfolio-site
+  npm install
+  npm run dev
+  ```
 
 ## Customization
 
@@ -137,12 +124,7 @@ You can add new sections by:
 ## Share Your Live Portfolio
 
 - Live URL: `https://akshita-mishra.vercel.app`
-- Add a badge in your repo README:
-
-```md
-[![Vercel](https://img.shields.io/badge/Deploy-Vercel-black?logo=vercel)](https://vercel.com/new)
-[![Made with React](https://img.shields.io/badge/Made%20with-React-61DAFB?logo=react&logoColor=white)](#)
-```
+- Optional badge: `[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)`
 
 ## Tech Stack
 
