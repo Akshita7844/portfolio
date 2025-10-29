@@ -134,3 +134,4 @@ Make sure Tailwind is configured properly in `tailwind.config.js`
 
 Good luck! 🎉
 
+
