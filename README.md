@@ -1,104 +1,59 @@
-# AI/ML Product Engineer Portfolio
+# Akshita Mishra — Portfolio (Template-Ready)
 
-A beautiful, modern portfolio website built with React, Vite, and Tailwind CSS.
+Live: `https://akshita-mishra.vercel.app`
+Repo: `https://github.com/Akshita7844/portfolio`
 
-## Features
+## TL;DR — Use This Portfolio
 
-- ✨ Modern, responsive design with glassmorphism effects
-- 🎨 Gradient animations and smooth scrolling
-- 💼 Professional sections: About, Experience, Projects, Skills
-- 🚀 Optimized for GitHub Pages deployment
-- 📱 Fully responsive and mobile-friendly
+- Use this template (fastest):
+  - https://github.com/Akshita7844/portfolio/generate
+  - Then edit `portfolio-site/src/App.jsx`
+  - Deploy with Vercel (1‑click):
+    - https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FAkshita7844%2Fportfolio&project-name=portfolio-site&repository-name=portfolio&root-directory=portfolio-site&build-command=npm%20run%20build&output-directory=dist
 
-## Local Development
+- Clone (if you prefer):
+  ```bash
+  git clone https://github.com/Akshita7844/portfolio
+  cd portfolio/portfolio-site
+  npm install
+  npm run dev
+  ```
 
-### Prerequisites
+- Deploy (Vercel settings):
+  - Framework: Vite
+  - Root directory: `portfolio-site`
+  - Build: `npm run build`
+  - Output: `dist`
 
-- Node.js (v20 or higher)
-- npm or yarn
+## Project Structure
 
-### Installation
+- `portfolio-site/` — the actual React + Vite + Tailwind app
+- `.github/` — issue/PR templates (for contributions via PRs)
+- `LICENSE` — MIT (you can reuse this template)
 
-1. Install dependencies:
-```bash
-npm install
-```
+## Contributing / Edits
 
-2. Start the development server:
-```bash
-npm run dev
-```
+Main branch is protected. Please open a PR if suggesting changes. You can freely create your own copy via the template link above.
 
-3. Open your browser and navigate to `http://localhost:5173`
+## 🎯 Option 0: No‑Code Generator (Easiest)
 
-## Building for Production
+1) Open `portfolio-generator.html` in your browser (it's in the root of this repo). If viewing on GitHub, click View Raw and save, then open the file locally.
 
-```bash
-npm run build
-```
+2) Fill the form and click "Generate My Portfolio Code". You will get two snippets:
+- Data block: wrapped between `{/* ======= BEGIN_DATA_BLOCK ... ======= */}` and `{/* ======= END_DATA_BLOCK ======= */}`
+- Hero block: wrapped between `{/* ======= BEGIN_HERO_BLOCK ... ======= */}` and `{/* ======= END_HERO_BLOCK ======= */}`
 
-The build output will be in the `dist` folder.
+3) Paste into `portfolio-site/src/App.jsx` EXACTLY between markers:
+- Replace arrays inside the markers starting near the top of the file:
+  - Find: `{/* ======= BEGIN_DATA_BLOCK (experiences, projects, skills) ======= */}`
+  - Select everything until: `{/* ======= END_DATA_BLOCK ======= */}`
+  - Paste the generated Data Block there
 
-## Deployment to GitHub Pages
+- Replace the hero section content:
+  - Find: `{/* ======= BEGIN_HERO_BLOCK (name, title, bio, email) ======= */}`
+  - Select until: `{/* ======= END_HERO_BLOCK ======= */}`
+  - Paste the generated Hero Block there
 
-### Option 1: Automatic Deployment (Recommended)
+4) Deploy to Vercel using the button above or import the repo. Root directory is `portfolio-site`, build `npm run build`, output `dist`.
 
-1. Push this code to your GitHub repository
-2. Go to your repository Settings → Pages
-3. Select "GitHub Actions" as the source
-4. The site will automatically deploy on every push to `main` branch
-
-### Option 2: Manual Deployment
-
-```bash
-# Build the project
-npm run build
-
-# Deploy using gh-pages (install if needed: npm install -g gh-pages)
-npx gh-pages -d dist
-```
-
-## Customization
-
-### Update Your Information
-
-Edit `src/App.jsx` to customize:
-- Your name and title
-- Professional experiences
-- Projects showcase
-- Skills and expertise
-- Contact information and social links
-
-### Change Colors
-
-Edit `tailwind.config.js` to customize the color scheme:
-
-```js
-colors: {
-  'primary': '#6366f1',
-  'secondary': '#8b5cf6',
-  'accent': '#ec4899',
-}
-```
-
-### Add New Sections
-
-You can add new sections by:
-1. Creating new sections in `App.jsx`
-2. Adding navigation links in the navbar
-3. Following the existing pattern for glass-effect styling
-
-## Tech Stack
-
-- **React** - UI framework
-- **Vite** - Build tool
-- **Tailwind CSS** - Styling
-- **GitHub Pages** - Hosting
-
-## License
-
-MIT License - feel free to use this for your own portfolio!
-
-## Contact
-
-For questions or suggestions, please reach out!
+That’s it—no coding needed.
